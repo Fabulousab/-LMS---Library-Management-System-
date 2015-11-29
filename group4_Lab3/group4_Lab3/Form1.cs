@@ -61,5 +61,28 @@ namespace group4_Lab3
             panel1.Controls.Add(DAL.BorrowerDAO.LoadForm());
             panel1.Focus();
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            this.panel1.Controls.Clear();
+            this.panel1.Controls.Add(DTL.Return.LoadForm());
+        }
+
+        private void toolStripLabel4_Click(object sender, EventArgs e)
+        {
+            toolStripButton4.PerformClick();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Reserve rs = new Reserve();
+            rs.TopLevel = false;
+            rs.Dock = DockStyle.Fill;
+            rs.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            rs.Visible = true;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(rs);
+        }
+
     }
 }

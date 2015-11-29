@@ -10,3 +10,5 @@ c:\users\star lowd\documents\visual studio 2013\Projects\group4_Lab3\group4_Lab3
 C:\Users\Star Lowd\documents\visual studio 2013\Projects\group4_Lab3\group4_Lab3\obj\Debug\group4_Lab3.Book.resources
 C:\Users\Star Lowd\Documents\Visual Studio 2013\Projects\group4_Lab3\group4_Lab3\obj\Debug\group4_Lab3.borrower.resources
 C:\Users\Star Lowd\Documents\Visual Studio 2013\Projects\group4_Lab3\group4_Lab3\obj\Debug\group4_Lab3.Member.resources
+C:\Users\Star Lowd\Documents\Visual Studio 2013\Projects\group4_Lab3\group4_Lab3\obj\Debug\group4_Lab3.Return.resources
+C:\Users\Star Lowd\Documents\Visual Studio 2013\Projects\group4_Lab3\group4_Lab3\obj\Debug\group4_Lab3.Reserve.resources

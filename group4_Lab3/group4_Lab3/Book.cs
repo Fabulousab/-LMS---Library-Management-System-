@@ -77,15 +77,20 @@ namespace group4_Lab3
 
         private void btnfliter_Click(object sender, EventArgs e)
         {
-            string bno = tbBBno.Text.Trim();
-           // MessageBox.Show(bno + "");
-            int xBno = int.Parse(bno);
-            
-            string sql = "select * from book where booknumber = '"+xBno+"'";
-            SqlDataAdapter sda = new SqlDataAdapter(sql,DAL.BookDAO.connectionString);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
+            try
+            {
+                if (tbBBno.Text == "") { MessageBox.Show("borrower number cannot be null"); return; }
+                string bno = tbBBno.Text.Trim();
+                // MessageBox.Show(bno + "");
+                int xBno = int.Parse(bno);
+
+                string sql = "select * from book where booknumber = '" + xBno + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(sql, DAL.BookDAO.connectionString);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void CEditable(bool enable)
@@ -99,6 +104,7 @@ namespace group4_Lab3
         
         private void btnCadd_Click(object sender, EventArgs e)
         {
+           
             if (btnCadd.Text == "Add")
             {
                 btnCadd.Text = "Save";
@@ -111,18 +117,28 @@ namespace group4_Lab3
                 btnCadd.Text = "Add";
             }
 
+
+            if (tbCcno.Text == "" || tbCbno.Text == "" || tbCsno.Text == "" || tbCtype.Text == "" || (tbCprice.Text) == "")
+            {
+                MessageBox.Show("Given Value space cannot be null");
+                return;
+            }
             DAL.Copy.InsertCopy(int.Parse(tbCcno.Text.Trim()), tbCbno.Text, tbCsno.Text, tbCtype.Text, double.Parse(tbCprice.Text));
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CEditable(false);
-            int rowIndex = dataGridView2.CurrentCell.RowIndex;
-            tbCbno.Text = dataGridView2.Rows[rowIndex].Cells[1].Value.ToString();
-            tbCcno.Text = dataGridView2.Rows[rowIndex].Cells[0].Value.ToString();
-            tbCsno.Text = dataGridView2.Rows[rowIndex].Cells[2].Value.ToString();
-            tbCtype.Text = dataGridView2.Rows[rowIndex].Cells[3].Value.ToString();
-            tbCprice.Text = dataGridView2.Rows[rowIndex].Cells[4].Value.ToString();
+            try
+            {
+                CEditable(false);
+                int rowIndex = dataGridView2.CurrentCell.RowIndex;
+                tbCbno.Text = dataGridView2.Rows[rowIndex].Cells[1].Value.ToString();
+                tbCcno.Text = dataGridView2.Rows[rowIndex].Cells[0].Value.ToString();
+                tbCsno.Text = dataGridView2.Rows[rowIndex].Cells[2].Value.ToString();
+                tbCtype.Text = dataGridView2.Rows[rowIndex].Cells[3].Value.ToString();
+                tbCprice.Text = dataGridView2.Rows[rowIndex].Cells[4].Value.ToString();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -149,6 +165,7 @@ namespace group4_Lab3
 
         private void btnBdelete_Click(object sender, EventArgs e)
         {
+
             int rowIndex = dataGridView1.CurrentCell.RowIndex;
             int bno = int.Parse(dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());
             string sql = "delete from book where booknumber = @bno";
@@ -166,30 +183,34 @@ namespace group4_Lab3
         int edit = 0;
         private void btnBEdit_Click(object sender, EventArgs e)
         {
-            if (edit == 0)
+            try
             {
-                edit = 1;
-                btnBEdit.Text = "Update";
-                btnBdelete.Enabled = false;
-                btnBadd.Enabled = false;
-                tbBauthor.Enabled = true;
-                tbBpublisher.Enabled = true;
-                tbBtitle.Enabled = true;
+                if (edit == 0)
+                {
+                    edit = 1;
+                    btnBEdit.Text = "Update";
+                    btnBdelete.Enabled = false;
+                    btnBadd.Enabled = false;
+                    tbBauthor.Enabled = true;
+                    tbBpublisher.Enabled = true;
+                    tbBtitle.Enabled = true;
 
-                return;
+                    return;
+                }
+                else
+                {
+                    DAL.BookDAO.EditBook(int.Parse(tbBBno.Text), tbBtitle.Text, tbBauthor.Text, tbBpublisher.Text);
+                    tbBauthor.Enabled = false;
+                    tbBpublisher.Enabled = false;
+                    tbBtitle.Enabled = false;
+                    btnBdelete.Enabled = true;
+                    btnBadd.Enabled = true;
+                    edit = 0;
+                    btnBEdit.Text = "Edit";
+                    load();
+                }
             }
-            else
-            {
-                DAL.BookDAO.EditBook(int.Parse(tbBBno.Text), tbBtitle.Text, tbBauthor.Text, tbBpublisher.Text);
-                tbBauthor.Enabled = false;
-                tbBpublisher.Enabled = false;
-                tbBtitle.Enabled = false;
-                btnBdelete.Enabled = true;
-                btnBadd.Enabled = true;
-                edit = 0;
-                btnBEdit.Text = "Edit";
-                load();
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

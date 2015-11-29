@@ -30,18 +30,18 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbmco = new System.Windows.Forms.TextBox();
+            this.tbname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnckMemeber = new System.Windows.Forms.Button();
+            this.btnckcondition = new System.Windows.Forms.Button();
+            this.tbcno = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbbd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbdd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnborrow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,19 +62,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Member Code";
             // 
-            // textBox1
+            // tbmco
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbmco.Location = new System.Drawing.Point(126, 43);
+            this.tbmco.Name = "tbmco";
+            this.tbmco.Size = new System.Drawing.Size(162, 20);
+            this.tbmco.TabIndex = 2;
             // 
-            // textBox2
+            // tbname
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 4;
+            this.tbname.Location = new System.Drawing.Point(126, 96);
+            this.tbname.Name = "tbname";
+            this.tbname.Size = new System.Drawing.Size(162, 20);
+            this.tbname.TabIndex = 4;
             // 
             // label2
             // 
@@ -85,32 +85,32 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Name";
             // 
-            // button1
+            // btnckMemeber
             // 
-            this.button1.Location = new System.Drawing.Point(126, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Check Member";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnckMemeber.Location = new System.Drawing.Point(126, 146);
+            this.btnckMemeber.Name = "btnckMemeber";
+            this.btnckMemeber.Size = new System.Drawing.Size(162, 23);
+            this.btnckMemeber.TabIndex = 5;
+            this.btnckMemeber.Text = "Check Member";
+            this.btnckMemeber.UseVisualStyleBackColor = true;
+            this.btnckMemeber.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnckcondition
             // 
-            this.button2.Location = new System.Drawing.Point(312, 325);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Check Borrow Condition";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnckcondition.Location = new System.Drawing.Point(312, 325);
+            this.btnckcondition.Name = "btnckcondition";
+            this.btnckcondition.Size = new System.Drawing.Size(148, 23);
+            this.btnckcondition.TabIndex = 6;
+            this.btnckcondition.Text = "Check Borrow Condition";
+            this.btnckcondition.UseVisualStyleBackColor = true;
+            this.btnckcondition.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox3
+            // tbcno
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 325);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 20);
-            this.textBox3.TabIndex = 8;
+            this.tbcno.Location = new System.Drawing.Point(126, 325);
+            this.tbcno.Name = "tbcno";
+            this.tbcno.Size = new System.Drawing.Size(114, 20);
+            this.tbcno.TabIndex = 8;
             // 
             // label3
             // 
@@ -121,12 +121,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Copy Number";
             // 
-            // textBox4
+            // tbbd
             // 
-            this.textBox4.Location = new System.Drawing.Point(126, 375);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 20);
-            this.textBox4.TabIndex = 10;
+            this.tbbd.Location = new System.Drawing.Point(126, 375);
+            this.tbbd.Name = "tbbd";
+            this.tbbd.Size = new System.Drawing.Size(114, 20);
+            this.tbbd.TabIndex = 10;
             // 
             // label4
             // 
@@ -137,12 +137,12 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Borrowed date";
             // 
-            // textBox5
+            // tbdd
             // 
-            this.textBox5.Location = new System.Drawing.Point(126, 415);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(114, 20);
-            this.textBox5.TabIndex = 12;
+            this.tbdd.Location = new System.Drawing.Point(126, 415);
+            this.tbdd.Name = "tbdd";
+            this.tbdd.Size = new System.Drawing.Size(114, 20);
+            this.tbdd.TabIndex = 12;
             // 
             // label5
             // 
@@ -153,32 +153,33 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Due Date";
             // 
-            // button3
+            // btnborrow
             // 
-            this.button3.Location = new System.Drawing.Point(312, 412);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Borrow";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnborrow.Location = new System.Drawing.Point(312, 412);
+            this.btnborrow.Name = "btnborrow";
+            this.btnborrow.Size = new System.Drawing.Size(148, 23);
+            this.btnborrow.TabIndex = 13;
+            this.btnborrow.Text = "Borrow";
+            this.btnborrow.UseVisualStyleBackColor = true;
+            this.btnborrow.Click += new System.EventHandler(this.button3_Click);
             // 
             // borrower
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 454);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.btnborrow);
+            this.Controls.Add(this.tbdd);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbbd);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbcno);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnckcondition);
+            this.Controls.Add(this.btnckMemeber);
+            this.Controls.Add(this.tbname);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbmco);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "borrower";
@@ -193,17 +194,17 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbmco;
+        private System.Windows.Forms.TextBox tbname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnckMemeber;
+        private System.Windows.Forms.Button btnckcondition;
+        private System.Windows.Forms.TextBox tbcno;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbbd;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbdd;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnborrow;
     }
 }

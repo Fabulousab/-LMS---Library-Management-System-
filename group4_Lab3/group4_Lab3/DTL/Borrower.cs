@@ -9,6 +9,8 @@ namespace group4_Lab3.DTL
     {
         int borrowerNumber;
         char sex;
+        
+
 
         public char Sex
         {

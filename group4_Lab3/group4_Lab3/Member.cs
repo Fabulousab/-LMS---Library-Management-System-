@@ -34,7 +34,11 @@ namespace group4_Lab3
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            if (tbmco.Text == "" || tbname.Text == "" || tbsex.Text == "" || tbaddress.Text == "" || tbtelephone.Text == "" || tbemail.Text == "")
+            {
+                MessageBox.Show("Given space cannot be null");
+                return;
+            }
             if (btnAdd.Text == "Add")
             {
                 tbmco.Enabled = false;
@@ -69,6 +73,7 @@ namespace group4_Lab3
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = dataGridView1.CurrentCell.RowIndex;
+            if (index < 0) return;
             tbmco.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
             tbname.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
             tbsex.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
@@ -79,6 +84,7 @@ namespace group4_Lab3
         private void btndelete_Click(object sender, EventArgs e)
         {
             int index = dataGridView1.CurrentCell.RowIndex;
+            if (index < 0) return;
             string mco = dataGridView1.Rows[index].Cells[0].Value.ToString();
             if (MessageBox.Show("Are you sure you want to delete borrower with id " + mco, "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
@@ -95,8 +101,9 @@ namespace group4_Lab3
 
         private void btnfliter_Click(object sender, EventArgs e)
         {
+            if (tbmco.Text.Trim() == "") { MessageBox.Show("Given Member code space cannot be null"); return; }
             string sql = "select * from borrower where borrowernumber = '" + int.Parse(tbmco.Text.Trim()) + "'";
-            SqlDataAdapter sda = new SqlDataAdapter(sql, DAL.BookDAO.connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter(sql, DAL.BookDAO.connectionString); 
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;

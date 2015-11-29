@@ -23,5 +23,21 @@ namespace group4_Lab3.DAL
             conn.Open();
             return cmd.ExecuteNonQuery();
         }
+        public static DTL.Copy copyExist(int cno)
+        {
+            string sql = "select * from copy where type = 'A' and copynumber = " + cno;
+            SqlConnection conn = new SqlConnection(DAL.BookDAO.connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (!sdr.Read()) return null;
+            DTL.Copy cp = new DTL.Copy();
+            cp.CopyNumber = sdr.GetInt32(0);
+            cp.BookNumber = sdr.GetInt32(1);
+            cp.SequenceNumber = sdr.GetInt32(2);
+            cp.Type = sdr.GetString(3)[0];
+            cp.Price = sdr.GetDouble(4);
+            return cp;
+        }
     }
 }
